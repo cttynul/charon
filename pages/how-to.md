@@ -1,6 +1,6 @@
-# Charon Blog Framework
+# Charon Blog Engine
 
-Charon is a lightweight and easy-to-use static blog framework built entirely with HTML, CSS, and JavaScript. It doesn't require a backend, allowing you to create a personal blog by managing all content in Markdown files.
+Charon is a lightweight and easy-to-use static blog engine built entirely with HTML, CSS, and JavaScript. It doesn't require a backend, allowing you to create a personal blog by managing all content in Markdown files.
 
 ## Features
 
@@ -20,7 +20,7 @@ The folder structure is designed to be intuitive and easy to manage:
 .
 ├── css/
 │   ├── custom.css          # For your custom styles
-│   └── style.css           # Base framework styles
+│   └── style.css           # Base Charon styles
 ├── data/                   # For post and page data
 │   ├── pages.js            
 │   └── post.js             

@@ -1,6 +1,6 @@
 const SITE_SETTINGS = {
-    siteName: "Charon Framework",
-    footerText: "© 2024 Charon Framework. All rights reserved.",
+    siteName: "Charon Engine",
+    footerText: "© 2024 Charon Engine. All rights reserved.",
     postsPath: "posts",
     imagesPath: "images",
     pagesPath: "pages", 
