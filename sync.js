@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline-sync');
 const SITE_SETTINGS = require('./js/site.js');
 
 // Funzione per leggere e analizzare il contenuto Markdown
@@ -21,6 +22,10 @@ const syncContent = () => {
     try {
         console.log('Starting content synchronization...');
 
+        // Richiesta dell'autore in input all'inizio dello script
+        const authorInput = readline.question('Do you want to add an author for new posts? Enter the author\'s name (press Enter for none): ');
+        const newPostAuthor = authorInput.trim() === '' ? null : authorInput.trim();
+
         // Sincronizza i post
         let postDataContent = fs.readFileSync('data/post.js', 'utf8');
         let posts = JSON.parse(postDataContent.replace('const POSTS =', '').replace(';', ''));
@@ -36,11 +41,15 @@ const syncContent = () => {
                     const fileContent = fs.readFileSync(filePath, 'utf8');
                     const titleMatch = fileContent.match(/^#\s(.+)$/m);
                     const title = titleMatch ? titleMatch[1] : id;
+
+                    // Aggiunta della data di pubblicazione dal file system
+                    const stats = fs.statSync(filePath);
+                    const publicationDate = stats.birthtime.toISOString().split('T')[0];
                     
                     // Estrazione automatica dell'anteprima dal file Markdown
                     const intro = getMarkdownIntro(filePath);
 
-                    newPosts.push({ id, title, intro });
+                    newPosts.push({ id, title, publicationDate, author: newPostAuthor, intro });
                     
                     // Crea la cartella per le immagini
                     const imageDir = path.join(SITE_SETTINGS.imagesPath, id);
