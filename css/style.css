@@ -64,24 +64,37 @@ table thead th {
 }
 
 .list-group-item.blog-list-item {
-    border: 1px solid #e9ecef;
-    border-radius: .25rem;
-    margin-bottom: 1rem;
+    border: none; /* Rimuovi i bordi */
+    border-radius: 0.5rem; /* Aggiungi un po' di bordo arrotondato */
+    margin-bottom: 1.5rem; /* Aumenta lo spazio tra gli elementi */
     transition: all 0.3s ease-in-out;
-    background-color: #f8f9fa;
-    padding: 1.5rem;
+    background-color: #ffffff; /* Sfondo bianco per un look più pulito */
+    padding: 2rem; /* Aumenta il padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiungi un'ombra delicata */
 }
 .list-group-item.blog-list-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Ombra più pronunciata al passaggio del mouse */
     background-color: #fff;
 }
 .blog-list-item h5 {
-    color: #000;
-    font-weight: 600;
+    color: #333; /* Rendi il titolo più scuro per una migliore leggibilità */
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 .blog-list-item p {
-    color: #6c757d;
+    color: #666; /* Rendi il testo più scuro */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.blog-list-item small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #999;
+}
+.blog-list-item .badge {
+    font-size: 0.9em;
+    padding: 0.5em 0.8em;
 }
 
 .post-header-image {

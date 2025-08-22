@@ -7,5 +7,6 @@ const SITE_SETTINGS = {
     logoNavbarPath: null,
     logoMainPath: "assets/logo.png",
     faviconPath: "assets/favicon.ico",
-    viewMode: "grid" // Puoi scegliere "grid" o "list"
+    viewMode: "grid", // Puoi scegliere "grid" o "list"
+    enableAnimations: false // true abilita le animazione, false le disabilita
 };

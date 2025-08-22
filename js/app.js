@@ -20,18 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const animateIn = (element) => {
-        element.classList.add('animate__animated', 'animate__slideInUp');
-        element.addEventListener('animationend', () => {
-            element.classList.remove('animate__animated', 'animate__slideInUp');
-        }, { once: true });
+        if (SITE_SETTINGS.enableAnimations) {
+            element.classList.add('animate__animated', 'animate__slideInUp');
+            element.addEventListener('animationend', () => {
+                element.classList.remove('animate__animated', 'animate__slideInUp');
+            }, { once: true });
+        }
     };
 
     const animateOut = (element, callback) => {
-        element.classList.add('animate__animated', 'animate__slideOutDown');
-        element.addEventListener('animationend', () => {
-            element.classList.remove('animate__animated', 'animate__slideOutDown');
+        if (SITE_SETTINGS.enableAnimations) {
+            element.classList.add('animate__animated', 'animate__slideOutDown');
+            element.addEventListener('animationend', () => {
+                element.classList.remove('animate__animated', 'animate__slideOutDown');
+                if (callback) callback();
+            }, { once: true });
+        } else {
             if (callback) callback();
-        }, { once: true });
+        }
     };
 
     const getPostIntro = async (postId) => {
