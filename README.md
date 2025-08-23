@@ -1,5 +1,7 @@
 # Charon: Just another Javascript no-backend blog
 
+<p text-align="center"><img style="max-height:300px" src="https://raw.githubusercontent.com/cttynul/charon/refs/heads/master/assets/logo.png"></p>
+
 Welcome to Charon Engine, the simplest way to run a static blog. Tired of complex databases, expensive hosting, and endless security patches? Charon Engine is your one-way ticket to a backend-free paradise. Write in Markdown, and let a little JavaScript magic do the rest.
 
 ### ✨ Key Features
