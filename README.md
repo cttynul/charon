@@ -1,22 +1,27 @@
 # Charon: Just another Javascript no-backend blog
 
-Welcome to Charon, the simplest way to run a static blog. Tired of complex databases, expensive hosting, and endless security patches? Charon is your one-way ticket to a backend-free paradise. Write in Markdown, and let a little JavaScript magic do the rest.
+Welcome to Charon Engine, the simplest way to run a static blog. Tired of complex databases, expensive hosting, and endless security patches? Charon Engine is your one-way ticket to a backend-free paradise. Write in Markdown, and let a little JavaScript magic do the rest.
 
-### ✨ New Features Added
+### ✨ Key Features
 
-In addition to the original functionalities, the blog now includes the following improvements:
+This blog engine is packed with features to make your blogging experience smooth and enjoyable:
 
-* **Improved Transition Animations**: The transparency effect has been replaced with a smoother sliding animation for page transitions.
-* **Advanced Post Management**: Posts now support additional metadata such as tags, author, and publication date.
+* **Completely Backend-Free**: No databases, no server-side logic, just static files.
+* **Markdown-Powered**: Write your content in simple Markdown files.
+* **Automatic Post Management**: The `sync.js` script automatically scans your content, manages metadata, and organizes your files.
 * **Automatic Sorting**: Articles are automatically sorted by publication date, from most recent to least recent.
 * **Interactive Tag Filter**: On the homepage, you can select and filter articles based on specific tags to easily find content of interest.
-* **Custom Tags**: Tags are now displayed with a darker color for better readability in articles.
-* **Simplified Navigation**: The page automatically scrolls to the top when a new article or page is opened, improving the navigation experience.
-* **Readable Font**: The font for titles has been changed to a more readable one, ensuring a more pleasant reading experience.
+* **Customizable View Modes**: Choose between a modern "grid" or a classic "list" view for your homepage.
+* **Smooth Page Transitions**: Optional sliding animations for a seamless user experience.
+* **Syntax Highlighting**: Code blocks are automatically highlighted for better readability.
+* **Mathematical Notation**: Support for KaTeX for rendering mathematical formulas.
+* **Clean Navigation**: The page automatically scrolls to the top when a new article or page is opened, improving the navigation experience.
 
-### ⚙️ Updated Project Structure
+---
 
-The project structure now includes the following files:
+### ⚙️ Project Structure
+
+The project structure is intuitive and easy to navigate
 
 ```
 .
@@ -53,21 +58,22 @@ You'll need Node.js installed on your computer to use the `sync.js` script.
     Start by configuring your blog in `js/site.js`.
 
     ```javascript
-    module.exports = {
-        siteName: "My Awesome Blog",
-        footerText: "© 2024 My Awesome Blog. All rights reserved.",
+    const SITE_SETTINGS = {
+        siteName: "Charon Engine",
+        footerText: "© 2024 Charon Engine. All rights reserved.",
         postsPath: "posts",
-        pagesPath: "pages",
         imagesPath: "images",
-        logoNavbarPath: "images/logo.png",
-        logoMainPath: null,
-        faviconPath: "images/favicon.ico",
-        viewMode: "grid" // "grid" or "list"
+        pagesPath: "pages", 
+        logoNavbarPath: null,
+        logoMainPath: "assets/logo.png",
+        faviconPath: "assets/favicon.ico",
+        viewMode: "grid", // Choose between "grid" or "list"
+        enableAnimations: false // true enables animations, false disables them
     };
     ```
 
 2.  **Create Your Content**
-    Just drop your Markdown files into the `posts/` or `pages/` folders. Don't worry about editing `data/post.js` or `data/pages.js`—we have a script for that.
+    Just drop your Markdown files into the `posts/` or `pages/` folders. Don't worry about editing `data/post.js` or `data/pages.js`—the script handles that for you.
 
 3.  **Automagic**
     Run the synchronization script from your terminal.
@@ -79,15 +85,20 @@ You'll need Node.js installed on your computer to use the `sync.js` script.
     This command will perform the following operations:
     * Scans the `posts/` and `pages/` directories.
     * Automatically updates `data/post.js` and `data/pages.js` with new entries.
-    * Creates a dedicated image folder for each new post.
+    * Creates a dedicated image folder for each new post, if one doesn't exist.
 
 4.  **Serve and Enjoy**
-    Simply open `index.html` in your favorite web browser. For local development, a simple web server (like `live-server` or Python's built-in server) is recommended.
+    Simply open `index.html` in your favorite web browser. For local development, a simple web server (like `live-server` or Python's built-in server) is highly recommended to avoid CORS issues.
+
+---
 
 ### 🎨 Customization
 
-* **Global Settings**: Edit `js/site.js` to change the site name, footer, logos, and layout mode ("grid" or "list").
+* **Global Settings**: Edit `js/site.js` to change the site name, footer, logos, layout mode ("grid" or "list"), and animations.
 * **Custom CSS**: Override any default styles by adding your own rules to `css/custom.css`.
+* **Post Metadata**: Edit the `data/post.js` file to manually add metadata like `author`, `publicationDate`, and `tags` for your posts.
+
+---
 
 ### 📄 License
 
